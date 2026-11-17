@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       macos_version:
-        description: macOS release whose xnu to build (13.5 = xnu-8796, iOS 16 era)
-        default: "13.5"
+        description: macOS release whose xnu to build 15 = xnu-8796, iOS 16 era)
+        default: "15"
       kernel_config:
         description: RELEASE / DEVELOPMENT / DEBUG
         default: DEVELOPMENT
@@ -28,7 +28,7 @@ concurrency:
 env:
   DXB_REPO: https://github.com/blacktop/darwin-xnu-build
   DXB_SHA: 663906528d1cd5ea8fde7de6f16de73db9511549
-  MACOS_VERSION: ${{ inputs.macos_version || '13.5' }}
+  MACOS_VERSION: ${{ inputs.macos_version || '15' }}
   KERNEL_CONFIG: ${{ inputs.kernel_config || 'DEVELOPMENT' }}
   MACHINE_CONFIG: ${{ inputs.machine_config || 'A5XELTE' }}
 
